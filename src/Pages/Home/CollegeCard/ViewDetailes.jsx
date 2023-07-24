@@ -1,8 +1,7 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData } from 'react-router-dom';
 
 const ViewDetailes = () => {
     const colleges = useLoaderData();
-    console.log(colleges)
     const { college_name, admission_dates, research_history, college_image } = colleges;
     return (
         <div className="card bg-base-100 shadow-xl">
@@ -11,10 +10,10 @@ const ViewDetailes = () => {
             </figure>
             <div className="card-body items-center">
                 <h2 className="card-title">{college_name}</h2>
-                <p>admission_dates: {admission_dates}</p>
-                <p>research_history: {research_history}</p>
+                <p>Admission dates: {admission_dates}</p>
+                <p>Research history: {research_history}</p>
                 <div className="card-actions">
-                    <button className="btn btn-primary">Buy Now</button>
+                    <button className="btn btn-primary">Admission Now</button>
                 </div>
             </div>
         </div>

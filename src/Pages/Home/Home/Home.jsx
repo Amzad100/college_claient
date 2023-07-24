@@ -1,12 +1,15 @@
+import Reviews from "../../Reviews/Reviews";
 import Bannar from "../Bannar/Bannar";
 import CollegeCard from "../CollegeCard/CollegeCard";
+import Gallery from "../Gallery/Gallery";
 
 const Home = () => {
     return (
         <div>
             <Bannar></Bannar>
             <CollegeCard></CollegeCard>
-            <h1>This is home</h1>
+            <Gallery></Gallery>
+            <Reviews></Reviews>
         </div>
     );
 };

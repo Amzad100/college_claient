@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-const SinglecollegeCard = ({ college }) => {
-    const { _id, college_name, admission_dates, research_history, college_image } = college;
+const SingleCollege = ({ college }) => {
+    const { _id, college_name, admission_dates, research_history, college_image } = college || {};
     return (
         <div className="card bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
@@ -9,14 +9,16 @@ const SinglecollegeCard = ({ college }) => {
             </figure>
             <div className="card-body items-center">
                 <h2 className="card-title">{college_name}</h2>
-                <p>Admission dates: {admission_dates}</p>
-                <p>Research history: {research_history}</p>
+                <p>admission_dates: {admission_dates}</p>
+                <p>research_history: {research_history}</p>
                 <div className="card-actions">
-                    <Link to={`/viewDetails/${_id}`}><button className="btn btn-primary">View Details</button></Link>
+                    <Link to={`/viewDetails/${_id}`}>
+                        <button className="btn btn-primary">View Details</button>
+                    </Link>
                 </div>
             </div>
         </div>
     );
 };
 
-export default SinglecollegeCard;
+export default SingleCollege;

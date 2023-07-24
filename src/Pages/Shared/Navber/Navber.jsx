@@ -1,11 +1,29 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../Providers/Authprovider";
+import Swal from "sweetalert2";
 
 const Navber = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const navigate = useNavigate();
     const navLinkstyle = ({ isActive }) => {
         return {
             fontWeight: isActive ? 'bold' : 'normal',
             color: isActive ? 'white' : 'white'
         }
+    }
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'LogOut successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            })
+            .catch(error => console.log(error));
+        navigate('/login')
     }
     const navItem = <>
         <li><NavLink style={navLinkstyle} to='/'>Home</NavLink></li>
@@ -32,9 +50,22 @@ const Navber = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Login</a>
+                {
+                    user ? <><Link to='/updateprofile'><p>{user.displayName}</p></Link>
+                        <div className="avatar">
+                            <div className="w-12 rounded-full ring ring-blue-600 ring-offset-base-100 ring-offset-2">
+                                <img src={user.photoURL} />
+                            </div>
+                        </div></> : <></>
+                }
+                <div className="ml-3">
+                    {
+                        user ? <> <button onClick={handleLogOut} className="btn bg-[#2563eb] text-white">Logout</button></> :
+                            <><Link to='/login' className="btn bg-[#2563eb] text-white">Login</Link></>
+                    }
+                </div>
             </div>
-        </div>
+        </div >
     );
 };
 

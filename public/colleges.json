@@ -1,6 +1,5 @@
 [
     {
-        "_id": "1",
         "college_name": "Kutubdia Model High School and College",
         "admission_dates": "August 1 - August 15",
         "events": [
@@ -17,7 +16,6 @@
         "college_image": "https://i.ibb.co/ydScSKp/kutubdia.jpg"
     },
     {
-        "_id": "2",
         "college_name": "Chittagong College",
         "admission_dates": "July 20 - August 10",
         "events": [
@@ -34,7 +32,6 @@
         "college_image": "https://i.ibb.co/FsF32Nx/chittagong.jpg"
     },
     {
-        "_id": "3",
         "college_name": "Gov't Hazi Mohammad Mohoshin College",
         "admission_dates": "July 25 - August 5",
         "events": [
@@ -51,7 +48,6 @@
         "college_image": "https://i.ibb.co/NYTBbjs/mohoshin.jpg"
     },
     {
-        "_id": "4",
         "college_name": "Gov't City College, Chittagong",
         "admission_dates": "July 15 - August 1",
         "events": [
@@ -68,7 +64,6 @@
         "college_image": "https://i.ibb.co/rs0s2RL/chity.jpg"
     },
     {
-        "_id": "5",
         "college_name": "Cox's Bazar Gov't College",
         "admission_dates": "July 18 - August 3",
         "events": [
@@ -85,7 +80,6 @@
         "college_image": "https://i.ibb.co/q9g9Ksj/cox-s-baxar-college.jpg"
     },
     {
-        "_id": "6",
         "college_name": "Dhaka City College",
         "admission_dates": "July 30 - August 20",
         "events": [

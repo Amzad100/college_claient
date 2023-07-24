@@ -7,11 +7,17 @@ import Colleges from "../Pages/Colleges/Colleges";
 import Admission from "../Pages/Admission/Admission";
 import Mycocllege from "../Pages/MyCollege/Mycocllege";
 import ViewDetailes from "../Pages/Home/CollegeCard/ViewDetailes";
+import SingUp from "../Pages/SignUp/SingUp";
+import Login from "../Pages/Login/Login";
+import PrivateRoutes from "./PrivateRoutes";
+import Errorpage from "../ErrorPage/ErrorPage";
+import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
+        errorElement: <Errorpage></Errorpage>,
         children: [
             {
                 path: '/',
@@ -26,21 +32,33 @@ const router = createBrowserRouter([
                 element: <Footer></Footer>
             },
             {
+                path: 'signUp',
+                element: <SingUp></SingUp>
+            },
+            {
+                path: 'login',
+                element: <Login></Login>
+            },
+            {
                 path: 'colleges',
                 element: <Colleges></Colleges>
             },
             {
-                path: 'viewDetails/:_id',
-                element: <ViewDetailes></ViewDetailes>,
-                loader: ({ params }) => fetch(`http://localhost:5000/colleges/${params._id}`)
+                path: 'viewDetails/:id',
+                element: <PrivateRoutes><ViewDetailes></ViewDetailes></PrivateRoutes>,
+                loader: ({ params }) => fetch(`https://bangladashi-colleges-server.vercel.app/colleges/${params.id}`)
             },
             {
                 path: 'admission',
-                element: <Admission></Admission>
+                element: <PrivateRoutes><Admission></Admission></PrivateRoutes>
             },
             {
                 path: 'mycollege',
-                element: <Mycocllege></Mycocllege>
+                element: <PrivateRoutes><Mycocllege></Mycocllege></PrivateRoutes>
+            },
+            {
+                path: 'updateprofile',
+                element: <UpdateProfile></UpdateProfile>
             }
         ]
     }
